@@ -1,1 +1,94 @@
+console.log("Hej Världen!"); //Swedish 
+console.log("Merhaba Dunya!"); //Turkish
+console.log("Salam Donya!");//Persian
+
+
+console.log("I'am awesome"); //This SyntaxError can be fixed easily by using double quote and single qoute together 
+
+let x ;
+console.log("the value of my variable x will be: 2019");
+console.log(x);
+x = 2019;
+
+console.log("The value of my variable is: 2019");
+console.log(x);
+
+let y ="Happy New Year"
+console.log ("The value of my string is: Happy New Year");
+console.log(y);
+y = "Spring is on the way";
+console.log("The value of my string is: Spring is on the way ");
+console.log(y);
+
+let z = 7.25;
+console.log(z);
+let a = 7;
+console.log(a);
+if(a>z){
+    console.log(a)
+}else{
+    console.log(z)
+};
+
+//Array
+let myPluralityArray = [];
+console.log("The array is an empty array!");
+console.log(myPluralityArray);
+
+let myFavoriteAnimals = ["Wolf", " cat", " lion", " horse", " zebra"];
+console.log(myFavoriteAnimals);
+let daansFavoriteAnimal = ["baby pig"];
+let myNewFavoriteAnimals = myFavoriteAnimals + ", " + daansFavoriteAnimal;
+console.log(myNewFavoriteAnimals);
+
+//More String
+let myString = "this is a test";
+console.log(myString);
+console.log(myString.length);
+
+//Same Type
+let Q = 3;
+let Z = "foo";
+let M = 25;
+let N = "Zoo";
+console.log("The value of my variable foo is: " + Q);
+console.log("The value of my variable foo is: " + Z);
+console.log("The value of my variable foo is: " + M);
+console.log("The value of my variable foo is: " + N);
+
+console.log(typeof(Q));
+console.log(typeof (Z));
+console.log(typeof (M));
+console.log(typeof (N));
+
+if(typeof(Q)===typeof(Z)){
+    console.log("Same Type");
+}else{
+    console.log("Not Same Type")
+};
+if (typeof (Q) === typeof (M)) {
+    console.log("Same Type");
+} else {
+    console.log("Not Same Type")
+};
+
+//Remainder
+let R = 7;
+R = R % 3
+console.log(R);
+console.log("% is the remainder");
+
+//Questions
+//10.1 Yes you can store multiple types in an array!
+myMultipleTypeArray = ["string", 3, true];
+
+//Infinity
+console.log(6/0);
+console.log(1/0);
+
+if ( 6/0 ===10/0) {
+    console.log("Yes, you can compare infinities")
+} else {
+    console.log("No, you cannot compare infinities")
+};
 
