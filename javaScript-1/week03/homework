@@ -1,1 +1,160 @@
+//1. Strings!
+
+let myString = "hello,this,is,a,difficult,to,read,sentence";
+console.log(myString);
+console.log(myString.length);
+let myNewString = myString.replace(/,/g, ' ');
+console.log(myNewString);
+
+//2. Arrays!
+
+let favoriteAnimals = ["blowfish", "capricorn", "giraffe"];
+favoriteAnimals.push("turtle");
+console.log(favoriteAnimals);
+favoriteAnimals.splice(1, 0, 'meerkat');
+console.log('the new value of this array is:["blowfish", "meerkat", "capricorn", "giraffe", "turtle"] ');
+console.log(favoriteAnimals);
+console.log('The array has a length of: ', favoriteAnimals.length);
+favoriteAnimals.splice(3, 1);
+console.log(favoriteAnimals);
+console.log('The item you are looking for is at index: ', favoriteAnimals.indexOf("meerkat"));
+favoriteAnimals.splice(favoriteAnimals.indexOf("meerkat"), 1);
+console.log(favoriteAnimals);
+
+//More JavaScript 🎉
+
+//1
+function myFunction(a, b, c) {
+    return a + b + c
+}
+//2
+function colorCar(color) {
+    return "a " + color + " car"
+};
+//3
+function printMyObject(myObj) {
+    console.log(myObj);
+};
+
+let myObj = {
+    height: 10,
+    width: 12,
+    depth: 15,
+    tempreature: 25
+};
+printMyObject(myObj);
+//4
+function vehicleType(color, code) {
+    if (code === 1) {
+        return console.log("A ", color, "car")
+    }
+    else {
+        return console.log("A ", color, "motorbike")
+    };
+};
+
+vehicleType("green", 2);
+//5
+console.log("yes"); //Because the condition is always true
+//6
+function vehicle(color, code, age) {
+    while (code === 1) {
+        if (age === 0) {
+            return console.log("A ", color, "new car");
+        }
+        else {
+            return console.log("A ", color, "used car");
+        }
+    }
+    while (code === 2) {
+        if (age === 0) {
+            return console.log("A ", color, "new motorbike");
+        }
+        else {
+            return console.log("A ", color, "used motorbike");
+        }
+    }
+};
+
+vehicle("blue", 2, 5);
+//7
+let vehicleList = ["motorbike", "caravan", "bike", "bus", "minibus", "car"]
+//8
+vehicleList[2];
+//9
+function vehicle(color, code, age) {
+    if (age === 0) {
+        return console.log("A ", color, "new", vehicleList[code - 1]);
+    }
+    else {
+        return console.log("A ", color, "used", vehicleList[code - 1]);
+    }
+};
+let vehicleList = ["motorbike", "caravan", "bike", "bus", "minibus", "car"]
+
+vehicle("red", 5, 5);
+
+//10
+let vehicleList = ["car", "motorbike", "caravan", "bike"];
+let myCarAd = "";
+let counter = 0;
+for (let counter = 0; counter < vehicleList.length; counter++) {
+    if (counter === vehicleList.length - 1) {
+        myCarAd += "and " + vehicleList[counter] + "s. ";
+        break
+    };
+    myCarAd += vehicleList[counter] + "s, ";
+};
+
+//11
+yes
+
+//12
+let emptyObj = {};
+//13 & 14
+let myTeachers = {
+    stephan: "JavaScript",
+    Albert: "Git",
+    Baraa: "HTML-CSS",
+}
+//15
+let x = [1, 2, 3];
+let y = [1, 2, 3];
+let z = y;
+
+if (x == y) {
+    console.log("True")
+}
+else {
+    console.log("false")
+}; //The answer is: false
+
+if (x === y) {
+    console.log("True")
+}
+else {
+    console.log("false")
+};//The answer is: false
+
+if (z == y) {
+    console.log("True")
+}
+else {
+    console.log("false")
+};//The answer is: true
+
+if (z == x) {
+    console.log("True")
+}
+else {
+    console.log("false")
+};//The answer is: false
+
+//16
+let o1 = { foo: "bar" };// changing o1 will not change o3
+let o2 = { foo: "cafe" };//changing o2 will change the o3
+let o3 = o2;
+//17
+let bar = 42;
+console.log(typeof typeof bar); // it returns string. The reason is the first typeof returns the type of 42 which is a number and the second typeof returns the type of "number" which is a string.  
 
