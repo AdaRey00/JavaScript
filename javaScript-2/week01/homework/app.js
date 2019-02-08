@@ -13,16 +13,19 @@ let bookTitles = [
   'the-little-prince',
   'the-name-of-the-rose',
 ];
-console.log(bookTitles);
 
 /*1.3 Make a function (or functions) that generate a ul with li elements for each book ID in the array using a for loop.*/
 
-let ul = document.createElement('ul');
-for (let i = 0; i < bookTitles.length; i++) {
-  let li = document.createElement('li');
-  li.innerHTML = bookTitles[i];
-  ul.appendChild(li);
+function generateUl() {
+  let newUl = document.createElement('ul');
+  for (let i = 0; i < bookTitles.length; i++) {
+    let newLi = document.createElement('li');
+    newLi.innerHTML = bookTitles[i];
+    newUl.appendChild(newLi);
+  }
+  return newUl;
 }
+generateUl();
 
 /*1.4 Make an object (not an array!) containing information for each book. Each property of this object should be another (i.e., nested) object with the book ID you thought up in step 1.1 as a key, and at least the following properties: title, language and author.*/
 let bookData = {
@@ -30,56 +33,56 @@ let bookData = {
     title: 'The Lord of the Rings',
     author: 'J. R. R. Tolkien',
     language: 'English',
-    genre: 'fiction: fantasy (novel)',
+    genre: 'fiction, fantasy (novel)',
     published: 1955,
   },
   harry_potter_and_the_philosopher_stone: {
     title: "Harry Potter and the Philosopher's Stone",
     author: 'J. K. Rowling',
     language: 'English',
-    genre: 'fiction: fantasy (novel)',
+    genre: 'fiction, fantasy (novel)',
     published: 1997,
   },
   the_hobbit: {
     title: 'The Hobbit',
     author: 'J. R. R. Tolkien',
     language: 'English',
-    genre: 'fiction: fantasy (novel)',
+    genre: 'fiction, fantasy (novel)',
     published: 1937,
   },
   and_then_there_were_none: {
     title: 'And Then There Were None',
     author: 'Agatha Christie',
     language: 'English',
-    genre: 'fiction: mystery (novel)',
+    genre: 'fiction, mystery (novel)',
     published: 1939,
   },
   the_da_vinci_code: {
     title: 'The Da Vinci Code',
-    author: '	Dan Brown',
+    author: 'Dan Brown',
     language: 'English',
-    genre: 'fiction: mystery, thriller (novel)',
+    genre: 'fiction, mystery, thriller (novel)',
     published: 2003,
   },
   the_alchemist: {
     title: 'The Alchemist',
     author: 'Paulo Coelho',
     language: 'Portuguese',
-    genre: 'fiction: fantasy (novel)',
+    genre: 'fiction, fantasy (novel)',
     published: 1988,
   },
   one_hundred_years_of_solitude: {
     title: 'One Hundred Years of Solitude',
     author: 'Gabriel García Márquez',
     language: 'Spanish',
-    genre: 'fiction: magic realism (novel)',
+    genre: 'fiction, magic realism (novel)',
     published: 1967,
   },
   lolita: {
     title: 'Lolita',
     author: 'Vladimir Nabokov',
     language: 'English',
-    genre: 'fiction: general fiction (novel)',
+    genre: 'fiction, general fiction (novel)',
     published: 1955,
   },
   the_little_prince: {
@@ -99,17 +102,31 @@ let bookData = {
 };
 
 /*1.5 Now change the function from step 1.3 that you used to display the book ID's in a list to take the actual information about the book from the object and display that. Make sure you choose the correct HTML elements for each piece of info, for instance, a heading for the title.*/
-function generateBookList(title, author, language, genre, published) {
-  let ul = document.createElement('ul');
-  for (let i = 0; i < bookTitles.length; i++) {
-    let li = document.createElement('li');
-    li.innerHTML = bookData[i].title;
-    ul.appendChild(li);
-    console.log(ul);
-  }
-}
-let titles = document.querySelectorAll('.title');
-console.log(titles);
+
+/*let container = document.createElement('div');
+container.setAttribute('class', 'container');
+for (var key in bookData) {
+  let newDiv = document.createElement('div');
+  newDiv.setAttribute('class', 'main-div');
+  let bookTitle = document.createElement('ul');
+  let myHeader = document.createElement('h1');
+  bookTitle.appendChild(myHeader);
+  newDiv.appendChild(bookTitle);
+  container.appendChild(newDiv);
+  myHeader.innerHTML = bookData[key].title;
+  let bookAuthor = document.createElement('li');
+  bookTitle.appendChild(bookAuthor);
+  bookAuthor.innerHTML = 'Author: ' + bookData[key].author;
+  let bookGenre = document.createElement('li');
+  bookTitle.appendChild(bookGenre);
+  bookGenre.innerHTML = 'Genre: ' + bookData[key].genre;
+  let bookLanguage = document.createElement('li');
+  bookTitle.appendChild(bookLanguage);
+  bookLanguage.innerHTML = 'Language: ' + bookData[key].language;
+  let bookPublished = document.createElement('li');
+  bookTitle.appendChild(bookPublished);
+  bookPublished.innerHTML = 'First Published: ' + bookData[key].published;
+}*/
 
 /*1.7 Find and download book covers for each book and construct a new object which has as keys the book IDs again, and as value the path to the image source (e.g. { harry_potter: './img/harry_potter.jpg', ... }).*/
 let bookCover = {
@@ -144,5 +161,33 @@ let bookCover = {
     imageSource: 'the_name_of_the_rose.jpg',
   },
 };
-/*1.8 Loop over these entries (hint: Object.keys(objectName) gives you an array containing the keys). Then write a function which places an image at the corresponding li element. Remember that objects are not ordered, so you cannot guarantee that the first key is the first li element. (Hint: you could give each li item an id tag by modifying the function you made before.)*/
 
+/* 1.8 Loop over these entries (hint: Object.keys(objectName) gives you an array containing the keys). Then write a function which places an image at the corresponding li element. Remember that objects are not ordered, so you cannot guarantee that the first key is the first li element. (Hint: you could give each li item an id tag by modifying the function you made before.)*/
+
+let container = document.createElement('div');
+container.setAttribute('class', 'container');
+for (var key in bookData) {
+  let newDiv = document.createElement('div');
+  newDiv.setAttribute('class', 'main-div');
+  let bookTitle = document.createElement('ul');
+  let myHeader = document.createElement('h1');
+  bookTitle.appendChild(myHeader);
+  newDiv.appendChild(bookTitle);
+  container.appendChild(newDiv);
+  myHeader.innerHTML = bookData[key].title;
+  let bookPicture = document.createElement('IMG');
+  bookPicture.setAttribute('src', bookCover[key].imageSource);
+  bookTitle.appendChild(bookPicture);
+  let bookAuthor = document.createElement('li');
+  bookTitle.appendChild(bookAuthor);
+  bookAuthor.innerHTML = 'Author: ' + bookData[key].author;
+  let bookGenre = document.createElement('li');
+  bookTitle.appendChild(bookGenre);
+  bookGenre.innerHTML = 'Genre: ' + bookData[key].genre;
+  let bookLanguage = document.createElement('li');
+  bookTitle.appendChild(bookLanguage);
+  bookLanguage.innerHTML = 'Language: ' + bookData[key].language;
+  let bookPublished = document.createElement('li');
+  bookTitle.appendChild(bookPublished);
+  bookPublished.innerHTML = 'First Published: ' + bookData[key].published;
+}
